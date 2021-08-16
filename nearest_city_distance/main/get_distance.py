@@ -11,10 +11,10 @@ from  scipy.spatial import distance
 import numpy as np
 from geopy.distance import distance as geodist
 
-world_cities_file="./world_cities.csv"
 
 
-def get_nearest_city(event_location):
+
+def get_nearest_city(event_location, world_cities_file):
     
     """
     This function return the nearest city and distance to an event. 
