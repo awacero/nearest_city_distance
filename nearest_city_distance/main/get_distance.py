@@ -11,10 +11,12 @@ import io
 import numpy as np
 from geopy.distance import distance as geodist
 import reverse_geocoder
+from config import config
+
+world_cities_file = config['default'].CITIES_FILE
 
 
-
-def get_nearest_city(event_location, world_cities_file):
+def get_nearest_city(event_location):
     
     """
     This function return the nearest city and distance to an event. 

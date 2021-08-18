@@ -23,8 +23,7 @@ def call_get_nearest_city():
         lat = float(request.args.get('lat'))
         lon = float(request.args.get('lon'))
         event_location = (lat,lon)
-        print(event_location)
-        return str(get_distance.get_nearest_city(event_location,current_app.config['CITIES_FILE']))
+        return str(get_distance.get_nearest_city(event_location))
     
 
 @main.route('/get_country')
@@ -38,3 +37,7 @@ def call_get_country():
         lon = float(request.args.get('lon'))
         event_location = (lat,lon)   
         return str(get_country.get_country(event_location))
+    
+    
+    
+    
