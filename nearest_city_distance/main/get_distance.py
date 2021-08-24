@@ -28,9 +28,10 @@ def get_nearest_city(event_location):
     geo_object = reverse_geocoder.RGeocoder(mode=2, verbose=True, stream=io.StringIO(open(world_cities_file, encoding='utf-8').read()))
     result = geo_object.query(event_location)
     city = result[0]['name']
+    province = result[0]['admin1']
     city_location = (result[0]['lat'], result[0]['lon'])
     distance = geodist(event_location,city_location).kilometers
 
-    return round(distance,2),city
+    return round(distance,2),city,province
 
 
