@@ -12,7 +12,7 @@ import numpy as np
 from geopy.distance import distance as geodist
 import reverse_geocoder
 from config import config
-
+import unicodedata
 world_cities_file = config['default'].CITIES_FILE
 
 
@@ -29,6 +29,7 @@ def get_nearest_city(event_location):
     result = geo_object.query(event_location)
     city = result[0]['name']
     province = result[0]['admin1']
+    province = str(unicodedata.normalize('NFKD',province).encode('ascii','ignore'),encoding='utf-8')
     city_location = (result[0]['lat'], result[0]['lon'])
     distance = geodist(event_location,city_location).kilometers
 

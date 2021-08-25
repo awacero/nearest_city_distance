@@ -4,7 +4,7 @@ Created on Aug 6, 2021
 @author: wacero
 '''
 
-from flask import Flask, request, Response, current_app
+from flask import Flask, request, Response, current_app, jsonify
 from werkzeug.security import generate_password_hash, check_password_hash
 from . import main
 from . import get_distance
@@ -23,6 +23,8 @@ def call_get_nearest_city():
         lat = float(request.args.get('lat'))
         lon = float(request.args.get('lon'))
         event_location = (lat,lon)
+        distance,city,province = get_distance.get_nearest_city(event_location)
+        #return jsonify({'distance':distance,'city':city,'province':province})
         return str(get_distance.get_nearest_city(event_location))
     
 
