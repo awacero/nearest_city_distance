@@ -10,36 +10,50 @@ from . import main
 from . import get_distance
 from . import get_country
 
-#security_token = generate_password_hash(current_app.config['ACCESS_TOKEN'])
-#security_token = generate_password_hash('clavemuysecreta')
+
+# security_token = generate_password_hash(current_app.config['ACCESS_TOKEN'])
+# security_token = generate_password_hash('clavemuysecreta')
 @main.route('/get_nearest_city')
 def call_get_nearest_city():
 
+    """
+    Allows to call ``get_nearest_city`` function once access token
+    was verified, and then gets the location of nearest city based
+    on given coordinates.
+
+    :returns: str(get_distance.get_nearest_city(event_location))
+    :rtype: String
+    """
+
     security_token = generate_password_hash(current_app.config['ACCESS_TOKEN'])
-    
+
     token = request.args.get('token')
-    
+
     if check_password_hash(security_token, token):
         lat = float(request.args.get('lat'))
         lon = float(request.args.get('lon'))
-        event_location = (lat,lon)
-        distance,city,province = get_distance.get_nearest_city(event_location)
-        #return jsonify({'distance':distance,'city':city,'province':province})
+        event_location = (lat, lon)
+        distance, city, province = get_distance.get_nearest_city(event_location)
+        # return jsonify({'distance':distance,'city':city,'province':province})
         return str(get_distance.get_nearest_city(event_location))
-    
+
 
 @main.route('/get_country')
 def call_get_country():
-    
+
+    """
+    Allows to call ``get_country`` function once access token
+    was verified, and then gets the country based on given coordinates.
+
+    :returns: str(get_country.get_country(event_location))
+    :rtype: String
+    """
+
     security_token = generate_password_hash(current_app.config['ACCESS_TOKEN'])
     token = request.args.get('token')
-    
+
     if check_password_hash(security_token, token):
         lat = float(request.args.get('lat'))
         lon = float(request.args.get('lon'))
-        event_location = (lat,lon)   
+        event_location = (lat, lon)
         return str(get_country.get_country(event_location))
-    
-    
-    
-    
