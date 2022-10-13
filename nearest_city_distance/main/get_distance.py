@@ -28,6 +28,8 @@ def get_nearest_city(event_location):
     :returns: city
     :returns: province
     """
+
+
     event_location = np.array([event_location])
     geo_object =\
         reverse_geocoder.RGeocoder(mode=2, verbose=True,
