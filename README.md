@@ -1,6 +1,8 @@
 # nearest_city_distance
 
-Program to detect nearest city distance based on the given coordinates
+Program to detect the distance to the nearest city based on the coordinates indicated when running the program.
+
+**View Documentation:** [nearest_city_distance Documentation](https://awacero.github.io/nearest_city_distance/index.html)
 
 ## Clone nearest_city_distance code
 
