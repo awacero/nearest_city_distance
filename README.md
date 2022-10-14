@@ -36,3 +36,12 @@ python manage.py
 cd PATH_PROJECT
 pytest
 ```
+
+## Result
+
+If the program execution is successful, it should be displayed:
+1) Distance 
+2) City
+3) Province or State
+
+
