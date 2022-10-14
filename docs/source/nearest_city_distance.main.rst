@@ -4,14 +4,6 @@ nearest\_city\_distance.main package
 Submodules
 ----------
 
-nearest\_city\_distance.main.config module
-------------------------------------------
-
-.. automodule:: nearest_city_distance.main.config
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 nearest\_city\_distance.main.get\_country module
 ------------------------------------------------
 
