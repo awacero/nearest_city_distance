@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-nearest_city_distance's documentation!
+Nearest City Distance's documentation!
 =================================================
 .. image:: epn.png
    :target: index.html
