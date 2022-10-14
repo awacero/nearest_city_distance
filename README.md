@@ -27,3 +27,10 @@ python manage.py
 ```
 
 **Go to URL:** http://127.0.0.1:5000/get_nearest_city?lat=-2.71&lon=-78.56&token=clavemuysecreta
+
+## How to run test
+
+``` bash
+cd PATH_PROJECT
+pytest
+```
